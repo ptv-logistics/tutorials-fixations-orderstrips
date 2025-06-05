@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'EmojiSymbols'; /* EmojiSymbols Font (c)blockworks - Kenichi Kaneko */
+  src: url('./EmojiSymbols-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+
+.container {
+	display: flex;
+	align-items: stretch;
+  height: 100%
+}
+
+.container-row {
+	flex-direction: row;
+}
+
+.container-column {
+	flex-direction: column;
+}
+
+.grow-0 {
+	flex-grow: 0;
+}
+
+.grow-1 {
+	flex-grow: 1;
+}
+
+.scrollable {
+  overflow-y: auto;
+  flex: 1 1 0;
+}
+
+.border {
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.panel {
+  width: 480px;
+  border-right: 1px solid #ddd;
+  padding: 0 10px;
+}
+
+.map {
+	background-color: #0000ff20;
+}
+
+.long {
+  height: 1300px;
+}
+
+header {
+  background-color: #f4f4f4;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+button#start-optimization {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.marker-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+  align-content: center;
+  font-weight: bolder;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#order-list {
+  padding: 0;
+}
+
+.order-item {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  height: auto;
+}
+
+#configuration label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 3px 0;
+}
+
+#configuration label span {
+  display: inline-block;
+  width: 50%;
+}
+
+#configuration label input, #configuration label select {
+  display: inline-block;
+  width: 40%;
+}
+
+#configuration label select {
+  width: calc(40% + 5px);
+}
+
+.used {
+  background-color: #f8f8f8;
+  border-left: 4px solid #4a90e2;
+  position: relative;
+}
+
+.used > *:last-of-type::before {
+  content: "🔒";
+  font-size: 21px;
+  font-family: "EmojiSymbols", sans-serif;
+  margin-top: -5px;
+  margin-left: 5px;
+}

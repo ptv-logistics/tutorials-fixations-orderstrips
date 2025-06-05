@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixations of orders/trips</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <link rel="icon" href="../../favicon.ico" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-polylinedecorator@1.5.1/dist/leaflet.polylineDecorator.js"></script>
+    <script src="https://unpkg.com/dayjs@1.11.13/dayjs.min.js"></script>
+    <script src="https://developer-applications.myptv.com/Tutorials/common/jquery.min.js"></script>
+    <script src="./headerTileLayer.js"></script>
+    
+    <script src="./mapMarker.js"></script>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <header class="grow-0">
+      <h2>Fixations of orders/trips</h2>
+    </header>
+    <main class="grow-1 container container-row">
+      <aside class="grow-0 panel container container-column">
+        <section class="grow-0">
+          <h3>Configuration</h3>
+          <div class="border" id="configuration">
+            <label>
+              <span>Vehicles per depot:</span>
+              <input type="number" id="vehicle-count" min="1" max="5" value="1">
+            </label>
+            <label>
+              <span>Stop when all planned:</span>
+              <input type="checkbox" id="optimization-stop" checked>
+            </label>
+            <label>
+              <span>Insertion mode:</span>
+              <select id="insertion-mode">
+                <option value="anywhere">Anywhere</option>
+                <option value="before">Before order</option>
+                <option value="direct-before">Directly before order</option>
+                <option value="after">After order</option>
+                <option value="direct-after">Directly after order</option>
+              </select>
+            </label>
+            <label id="order-selector" style="display: none;">
+              <span>Select order:</span>
+              <select id="insertion-order">
+              </select>
+            </label>
+          </div>
+        </section>
+        <section class="grow-1 container container-column">
+          <div class="grow-0">
+            <h3>Orders</h3>
+          </div>
+          <div class="grow-1 scrollable border" id="order-list">
+          </div>
+        </section>
+        <section class="grow-0">
+          <button id="start-optimization">Start Optimization</button>
+        </section>
+      </aside>
+      <section class="grow-1" id="map"></section>
+    </main>
+  </body>
+</html>
